@@ -9,10 +9,10 @@ using Microsoft.Extensions.Logging;
 namespace Impostor.Plugins.Example
 {
     [ImpostorPlugin(
-        package: "gg.impostor.example",
-        name: "TPImp",
+        package: "gg.impostor",
+        name: "AllPets",
         author: "Keleonix",
-        version: "1.0.0")]
+        version: "1.0.1")]
     public class ExamplePlugin : PluginBase
     {
         private readonly ILogger<ExamplePlugin> _logger;

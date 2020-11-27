@@ -9,10 +9,10 @@ using Microsoft.Extensions.Logging;
 namespace Impostor.Plugins.Example
 {
     [ImpostorPlugin(
-        package: "gg.impostor",
-        name: "StatImp",
+        package: "gg.impostor.example",
+        name: "ColorImp",
         author: "Keleonix",
-        version: "1.2.6")]
+        version: "1.0.0")]
     public class ExamplePlugin : PluginBase
     {
         private readonly ILogger<ExamplePlugin> _logger;
@@ -30,7 +30,7 @@ namespace Impostor.Plugins.Example
 
         public override ValueTask EnableAsync()
         {
-            _logger.LogInformation("StatImp has been enabled.");
+            _logger.LogInformation("ColorImp has been enabled.");
             // Add the line below!
             _unregister = _eventManager.RegisterListener(new GameEventListener(_logger));
             return default;
@@ -38,7 +38,7 @@ namespace Impostor.Plugins.Example
 
         public override ValueTask DisableAsync()
         {
-            _logger.LogInformation("StatImp has been disabled.");
+            _logger.LogInformation("ColorImp has been disabled.");
             // Add the line below!
             _unregister.Dispose();
             return default;

@@ -74,9 +74,18 @@ namespace Impostor.Plugins.Example.Handlers
                     e.PlayerControl.SetPetAsync(Api.Innersloth.Customization.PetType.Ufo);
                     _logger.LogInformation($"{e.PlayerControl.PlayerInfo.PlayerName} set is pet to Ufo");
                     break;
+                case ("/pet"):
+                    SendMessage(e, "Pets: Alien, Bedcrab, Ellie, Hamster, Nopet (No pet), Robot, Squig, Stickmin and Ufo");
+                    break;
                 default:
                     break;
             }
+        }
+
+        private void SendMessage(IPlayerChatEvent e, string message)
+        {
+            e.Game.Host.Client.Player.Character.SendChatAsync(message);
+            return;
         }
     }
 }
